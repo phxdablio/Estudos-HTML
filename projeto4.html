@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>P&amp;G Artes - Gráfica</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <style>
+
+.carousel {
+      width: 600px;
+      height: 300px;
+      overflow: hidden;
+      position: relative;
+    }
+    
+    .slides {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      transition: transform 0.5s ease-in-out;
+    }
+    
+    .slide {
+      width: 100%;
+      height: 100%;
+    }
+
+
+
+
+        header {
+  background-color: #f2f2f2;
+  padding: 10px;
+}
+
+nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+nav li {
+  display: inline;
+}
+
+nav a {
+  padding: 10px;
+  text-decoration: none;
+  color: #333;
+}
+
+nav a:hover {
+  background-color: #333;
+  color: #fff;
+}
+
+.keyboard-active {
+  background-color: yellow; /* Cor de fundo para quando o teclado estiver ativo */
+}
+        
+        body {
+            margin: 0;
+            padding: 0;
+        }
+        
+        header {
+            background-color: #424141;
+            color: #fff;
+            padding: 20px;
+        }
+        
+        main {
+            background-color: #fff;
+            padding: 20px;
+        }
+        
+        footer {
+            background-color: #424141;
+            color: #fff;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header class="cab">
+
+        <h1>P&amp;G Artes</h1>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Serviços</a></li>
+                <li><a href="#">Portfólio</a></li>
+                <li><a href="#">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+    <p>
+   <center><div class="carousel">
+        <div class="slides">
+          <div class="slide">
+            <img src="Downloads/trab.jpg" alt="Imagem 1" width="600" height="300">
+          </div>
+          <div class="slide">
+            <img src="Downloads/trab1.jpg" alt="Imagem 2" width="600" height="300" >
+          </div>
+          <div class="slide">
+            <img src="Downloads/trab3.jpg.jpg" alt="Imagem 3" width="600" height="300">
+          </div>
+        </div>
+      </div>
+    </center> 
+    </p>
+      <script>
+        // Script para controlar a rolagem dos slides
+        const carousel = document.querySelector('.carousel');
+        const slides = carousel.querySelector('.slides');
+        const slideWidth = carousel.offsetWidth;
+        let currentIndex = 0;
+    
+        function goToSlide(index) {
+          slides.style.transform = `translateX(-${index * slideWidth}px)`;
+          currentIndex = index;
+        }
+    
+        function nextSlide() {
+          if (currentIndex < slides.children.length - 1) {
+            goToSlide(currentIndex + 1);
+          } else {
+            goToSlide(0);
+          }
+        }
+    
+        setInterval(nextSlide, 3000);
+      </script>
+
+    <main>
+        <section>
+            <h2>Serviços</h2>
+            <ul>
+                <li>Impressão offset</li>
+                <li>Impressão digital</li>
+                <li>Acabamentos especiais</li>
+                <li>Design gráfico</li>
+            </ul>
+        </section>
+        <section>
+            <h2>Portfólio</h2>
+            <!--<div class="gallery">
+                <img src="Downloads/trab.jpg" alt="Projeto 1">
+                <img src="Downloads/trab1.jpg" alt="Projeto 2">
+                <img src="Downloads/trab3.jpg.jpg" alt="Projeto 3">
+            </div>-->
+        </section>
+
+        <section>
+            <h2>Contato</h2>
+            <form>
+                <label for="name">Nome:</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="email">E-mail:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="message">Mensagem:</label>
+                <textarea id="message" name="message" required></textarea>
+
+                <button type="submit">Enviar</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2023 P&amp;G Artes. Todos os direitos reservados.</p>
+    </footer>
+</body>
+</html>
